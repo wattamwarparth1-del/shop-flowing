@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ShopFlow — Multi-Shop Billing & Inventory</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <script>
+    window.onerror = function(m, s, l, c, e) {
+      console.error('ShopFlow Error:', m, 'Source:', s, 'Line:', l, 'Error:', e);
+      const appEl = document.getElementById('app');
+      if (appEl && appEl.innerHTML.trim() === '') {
+        const msg = (m === 'Script error.') ? 'A script loading notice occurred. Please check console (F12) or refresh.' : m;
+        appEl.innerHTML = '<div style="max-width:500px;margin:60px auto;padding:24px;border:1px solid #FECACA;background:#FEF2F2;border-radius:12px;font-family:sans-serif;color:#991B1B;">' +
+          '<h3 style="margin:0 0 8px 0;font-size:18px;">Application Initialization Notice</h3>' +
+          '<p style="margin:0 0 12px 0;font-size:14px;color:#7F1D1D;">' + msg + (l ? ' (Line: ' + l + ')' : '') + '</p>' +
+          '<button onclick="location.reload()" style="background:#EF4444;color:white;border:none;padding:8px 16px;border-radius:6px;cursor:pointer;font-weight:600;">Reload Application</button>' +
+          '</div>';
+      }
+    };
+  </script>
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+
+  <link rel="stylesheet" href="assets/css/variables.css">
+  <link rel="stylesheet" href="assets/css/reset.css">
+  <link rel="stylesheet" href="assets/css/layout.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/auth.css">
+  <link rel="stylesheet" href="assets/css/pages.css">
+</head>
+<body>
+  <div id="app"></div>
+  <div class="toast-container" id="toast-container"></div>
+  <div class="modal-backdrop hidden" id="modal-backdrop">
+    <div id="modal-container"></div>
+  </div>
+
+  <noscript>This application requires JavaScript.</noscript>
+  <!-- Supabase JS (UMD build — works without a bundler) -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+  <!-- Initialize window._supabase before the app boots -->
+  <script src="assets/js/supabase-client.js?v=20261022_0005"></script>
+  <!-- Main app bundle -->
+  <script src="assets/js/bundle.js?v=20261029_0035"></script>
+</body>
+</html>
